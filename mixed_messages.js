@@ -1,15 +1,17 @@
 const horroscopeContents = {
-    startSentences: ['If you’ve been', 'Greeting','There may be', 'Meeting'],
+    startSentences: ['Perhaps', 'Greeting','There may be', 'Meeting'],
     middleSentence: ['a stranger', 'a new love'],
-    endSentence: ['to help you reach your goals',]
+    endSentence: ['will help you reach your goals',]
 }
 
 const randomPart = (object, sentencePart) => {
-    console.log(object[sentencePart])
-    let randomPart = object[sentencePart][Math.floor(Math.random()* object[sentencePart].length)]
-    return randomPart
+    return object[sentencePart][Math.floor(Math.random()* object[sentencePart].length)]
+};
 
-    //console.log(Math.floor(Math.random()* object[sentencePart].length))
+const fortune = (starSign) => {
+    let start = randomPart(horroscopeContents, 'startSentences') 
+    let middle = randomPart(horroscopeContents, 'middleSentences')
+    let end = randomPart(horroscopeContents, 'endSentences')
+    return `${start} ${middle} ${end}`
 }
-//console.log(horroscopeContents.startSentences)
 console.log(randomPart(horroscopeContents, 'startSentences'))
